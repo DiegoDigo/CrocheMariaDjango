@@ -1,0 +1,4 @@
+.idea
+produto/migrations
+venda/migrations
+*.pyc
