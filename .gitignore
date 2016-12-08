@@ -2,3 +2,7 @@
 produto/migrations
 venda/migrations
 *.pyc
+files
+CrocheMaria/__pycache__/
+produto/__pycache__/
+venda/__pycache__/
