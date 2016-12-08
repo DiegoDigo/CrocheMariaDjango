@@ -40,7 +40,6 @@ class Tipo(models.Model):
 
 
 class Produto(models.Model):
-    codigoProduto = models.IntegerField(primary_key=True, unique=True)
     descProduto = models.CharField("Descrição Produto", max_length=100)
     tipo = models.ForeignKey(Tipo)
     preco = models.ForeignKey(Preco)
@@ -54,5 +53,3 @@ class Produto(models.Model):
         verbose_name = 'Produto'
         verbose_name_plural = 'Produtos'
         ordering = ['descProduto']
-
-
