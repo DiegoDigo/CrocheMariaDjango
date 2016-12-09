@@ -1,23 +1,14 @@
 from django.contrib import admin
-from .models import Produto, Preco, Imagem, Tipo
-
-
-class AdminImagem(admin.ModelAdmin):
-    list_display = ['tipo', 'imagen']
+from .models import ProdutoModel, CategoriaModel
 
 
 class AdminProduto(admin.ModelAdmin):
-    list_display = ['tipo', 'imagen']
+    list_display = ['produto', 'quantidade', 'preco', 'categoria']
 
 
-class AdminPreco(admin.ModelAdmin):
-    list_display = ['precoUnitario', 'precoPacote']
+class AdminCategoria(admin.ModelAdmin):
+    list_display = ['id', 'categoria']
 
+admin.site.register(ProdutoModel, AdminProduto)
+admin.site.register(CategoriaModel, AdminCategoria)
 
-class AdminTipo(admin.ModelAdmin):
-    list_display = ['tipo']
-
-admin.site.register(Preco)
-admin.site.register(Produto)
-admin.site.register(Imagem, AdminImagem)
-admin.site.register(Tipo, AdminTipo)
