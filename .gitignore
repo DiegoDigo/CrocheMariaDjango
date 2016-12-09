@@ -1,8 +1,10 @@
 .idea
 produto/migrations
 venda/migrations
+cliente/migrations
+media_cdn
 *.pyc
-files
 CrocheMaria/__pycache__/
 produto/__pycache__/
 venda/__pycache__/
+produto/api/__pycache__/
