@@ -1,27 +1,27 @@
 from rest_framework import generics
-from produto.models import ProdutoModel , CategoriaModel
-from . import  serializers
+from produto.models import Produto, Catalogo
+from . import serializers
 
 
-class ListarCategorias(generics.ListAPIView):
-    queryset = CategoriaModel.objects.all()
-    serializer_class = serializers.CategoriaSerializer
+class ListarCatalogos(generics.ListAPIView):
+    queryset = Catalogo.objects.all()
+    serializer_class = serializers.CatalogoSerializer
 
 
 class ListarProdutos(generics.ListAPIView):
-    queryset = ProdutoModel.objects.all()
+    queryset = Produto.objects.all()
     serializer_class = serializers.ProdutoSerializer
 
 
 class DetalheProduto(generics.RetrieveAPIView):
-    queryset = ProdutoModel.objects.all()
-    serializer_class = serializers.ProdutoSerializer
+    queryset = Produto.objects.all()
+    serializer_class = serializers.DetalheDoProdutoSerializer
     lookup_field = 'pk'
 
 
-class ListarProdutoPorCategoria(generics.ListAPIView):
+class ListarProdutoPorCatalogo(generics.ListAPIView):
     serializer_class = serializers.ProdutoSerializer
 
     def get_queryset(self):
         busca = self.kwargs['categoria']
-        return ProdutoModel.objects.filter(categoria=busca)
+        return Produto.objects.filter(catalogo=busca)

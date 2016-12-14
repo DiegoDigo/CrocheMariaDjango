@@ -1,6 +1,6 @@
 from django.db import models
 from cliente.models import ClienteModel
-from produto.models import ProdutoModel
+from produto.models import Produto
 
 
 class Status(models.Model):
@@ -37,7 +37,7 @@ class Pedido(models.Model):
 
 class PedidoItem(models.Model):
     pedido = models.ForeignKey(Pedido, related_name='pedidos')
-    produto = models.ForeignKey(ProdutoModel, related_name='produtos')
+    produto = models.ForeignKey(Produto, related_name='produtos')
     produtoName = models.CharField("Nome Produto", max_length=100)
     quantidadeItens = models.PositiveIntegerField("quantidade itens")
     valorUnitario = models.DecimalField(max_digits=5, decimal_places=2)

@@ -1,14 +1,15 @@
 from django.contrib import admin
-from .models import ProdutoModel, CategoriaModel
+from .models import Produto, Catalogo, ProdutoImagem , ProdutoDetalhe
 
 
-class AdminProduto(admin.ModelAdmin):
-    list_display = ['produto', 'quantidade', 'preco', 'categoria']
+#class AdminProduto(admin.ModelAdmin):
+#    list_display = ['nome', 'quantidade', 'preco', 'catalogo', 'slug']
 
 
-class AdminCategoria(admin.ModelAdmin):
-    list_display = ['id', 'categoria']
+#admin.site.register(Produto, AdminProduto)
+admin.site.register(Produto)
+admin.site.register(Catalogo)
+admin.site.register(ProdutoImagem)
+admin.site.register(ProdutoDetalhe)
 
-admin.site.register(ProdutoModel, AdminProduto)
-admin.site.register(CategoriaModel, AdminCategoria)
 
