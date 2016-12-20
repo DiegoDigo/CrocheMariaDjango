@@ -36,5 +36,3 @@ class DetalheDoProdutoSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Produto
         fields = '__all__'
-
-
